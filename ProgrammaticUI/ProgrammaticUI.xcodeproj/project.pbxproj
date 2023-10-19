@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		1E3C97382AE14D0D0085A5CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3C97372AE14D0D0085A5CB /* AppDelegate.swift */; };
 		1E3C973A2AE14D0D0085A5CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3C97392AE14D0D0085A5CB /* SceneDelegate.swift */; };
-		1E3C973C2AE14D0D0085A5CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3C973B2AE14D0D0085A5CB /* ViewController.swift */; };
+		1E3C973C2AE14D0D0085A5CB /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3C973B2AE14D0D0085A5CB /* MenuVC.swift */; };
 		1E3C97412AE14D0E0085A5CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E3C97402AE14D0E0085A5CB /* Assets.xcassets */; };
 		1E3C97442AE14D0E0085A5CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E3C97422AE14D0E0085A5CB /* LaunchScreen.storyboard */; };
 		1E3C974D2AE14FD50085A5CB /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3C974C2AE14FD50085A5CB /* MainTabController.swift */; };
+		1E3C974F2AE150D90085A5CB /* OffersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3C974E2AE150D90085A5CB /* OffersVC.swift */; };
+		1E3C97512AE150E30085A5CB /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3C97502AE150E30085A5CB /* ProfileVC.swift */; };
+		1E3C97532AE150F40085A5CB /* MoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3C97522AE150F40085A5CB /* MoreVC.swift */; };
+		1E3C97572AE151B70085A5CB /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3C97562AE151B70085A5CB /* HomeVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1E3C97342AE14D0D0085A5CB /* ProgrammaticUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProgrammaticUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E3C97372AE14D0D0085A5CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1E3C97392AE14D0D0085A5CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1E3C973B2AE14D0D0085A5CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1E3C973B2AE14D0D0085A5CB /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		1E3C97402AE14D0E0085A5CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1E3C97432AE14D0E0085A5CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1E3C97452AE14D0E0085A5CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E3C974C2AE14FD50085A5CB /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
+		1E3C974E2AE150D90085A5CB /* OffersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersVC.swift; sourceTree = "<group>"; };
+		1E3C97502AE150E30085A5CB /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		1E3C97522AE150F40085A5CB /* MoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreVC.swift; sourceTree = "<group>"; };
+		1E3C97562AE151B70085A5CB /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,9 +64,9 @@
 		1E3C97362AE14D0D0085A5CB /* ProgrammaticUI */ = {
 			isa = PBXGroup;
 			children = (
+				1E3C97582AE15ABC0085A5CB /* App */,
+				1E3C97542AE151900085A5CB /* TabBarController */,
 				1E3C974B2AE14F780085A5CB /* Controller */,
-				1E3C97372AE14D0D0085A5CB /* AppDelegate.swift */,
-				1E3C97392AE14D0D0085A5CB /* SceneDelegate.swift */,
 				1E3C97402AE14D0E0085A5CB /* Assets.xcassets */,
 				1E3C97422AE14D0E0085A5CB /* LaunchScreen.storyboard */,
 				1E3C97452AE14D0E0085A5CB /* Info.plist */,
@@ -69,10 +77,30 @@
 		1E3C974B2AE14F780085A5CB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				1E3C973B2AE14D0D0085A5CB /* ViewController.swift */,
-				1E3C974C2AE14FD50085A5CB /* MainTabController.swift */,
+				1E3C973B2AE14D0D0085A5CB /* MenuVC.swift */,
+				1E3C974E2AE150D90085A5CB /* OffersVC.swift */,
+				1E3C97502AE150E30085A5CB /* ProfileVC.swift */,
+				1E3C97522AE150F40085A5CB /* MoreVC.swift */,
+				1E3C97562AE151B70085A5CB /* HomeVC.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		1E3C97542AE151900085A5CB /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				1E3C974C2AE14FD50085A5CB /* MainTabController.swift */,
+			);
+			path = TabBarController;
+			sourceTree = "<group>";
+		};
+		1E3C97582AE15ABC0085A5CB /* App */ = {
+			isa = PBXGroup;
+			children = (
+				1E3C97392AE14D0D0085A5CB /* SceneDelegate.swift */,
+				1E3C97372AE14D0D0085A5CB /* AppDelegate.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,9 +173,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E3C973C2AE14D0D0085A5CB /* ViewController.swift in Sources */,
+				1E3C97512AE150E30085A5CB /* ProfileVC.swift in Sources */,
+				1E3C97572AE151B70085A5CB /* HomeVC.swift in Sources */,
+				1E3C973C2AE14D0D0085A5CB /* MenuVC.swift in Sources */,
 				1E3C97382AE14D0D0085A5CB /* AppDelegate.swift in Sources */,
+				1E3C97532AE150F40085A5CB /* MoreVC.swift in Sources */,
 				1E3C974D2AE14FD50085A5CB /* MainTabController.swift in Sources */,
+				1E3C974F2AE150D90085A5CB /* OffersVC.swift in Sources */,
 				1E3C973A2AE14D0D0085A5CB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
