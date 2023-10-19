@@ -68,12 +68,10 @@
 		1E3C97362AE14D0D0085A5CB /* ProgrammaticUI */ = {
 			isa = PBXGroup;
 			children = (
-				1E8C07512AE1769900DAA61D /* Model */,
-				1E8C074E2AE16E6100DAA61D /* Cell */,
-				1E3C97592AE164EA0085A5CB /* Extension */,
+				1E8C07572AE1B0A000DAA61D /* Scene */,
+				1E8C07562AE1B09000DAA61D /* Common */,
 				1E3C97582AE15ABC0085A5CB /* App */,
 				1E3C97542AE151900085A5CB /* TabBarController */,
-				1E3C974B2AE14F780085A5CB /* Controller */,
 				1E3C97402AE14D0E0085A5CB /* Assets.xcassets */,
 				1E3C97422AE14D0E0085A5CB /* LaunchScreen.storyboard */,
 				1E3C97452AE14D0E0085A5CB /* Info.plist */,
@@ -84,11 +82,11 @@
 		1E3C974B2AE14F780085A5CB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				1E8C07582AE1B0B400DAA61D /* Home */,
 				1E3C973B2AE14D0D0085A5CB /* MenuVC.swift */,
 				1E3C974E2AE150D90085A5CB /* OffersVC.swift */,
 				1E3C97502AE150E30085A5CB /* ProfileVC.swift */,
 				1E3C97522AE150F40085A5CB /* MoreVC.swift */,
-				1E3C97562AE151B70085A5CB /* HomeVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -131,6 +129,40 @@
 				1E8C07542AE176BB00DAA61D /* WorldCuisineModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		1E8C07562AE1B09000DAA61D /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				1E3C97592AE164EA0085A5CB /* Extension */,
+				1E8C07512AE1769900DAA61D /* Model */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		1E8C07572AE1B0A000DAA61D /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				1E3C974B2AE14F780085A5CB /* Controller */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		1E8C07582AE1B0B400DAA61D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				1E8C07592AE1B0BA00DAA61D /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		1E8C07592AE1B0BA00DAA61D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1E8C074E2AE16E6100DAA61D /* Cell */,
+				1E3C97562AE151B70085A5CB /* HomeVC.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

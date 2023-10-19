@@ -19,6 +19,16 @@ class HomeVC: UIViewController {
         return view
     }()
 
+    private let stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.backgroundColor = .white
+        stackView.axis = .vertical
+        stackView.spacing = 4
+        stackView.distribution = .equalSpacing
+        return stackView
+    }()
+
     private let deliveryLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -49,19 +59,38 @@ class HomeVC: UIViewController {
         return searchBar
     }()
 
+    private let popularRestaurantLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Popular Restaurants"
+        label.font = UIFont.systemFont(ofSize: 24, weight: .semibold)
+        label.textColor = .systemGray
+        label.textAlignment = .left
+        return label
+    }()
+
+    private let viewAllLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "View All"
+        label.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+        label.textColor = .orange
+        label.textAlignment = .right
+        return label
+    }()
+
     var worldCuisineCollectionView: UICollectionView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupUI()
-        setupCollectionView()
+
+        setupWorldCuisineCollectionView()
+        setupLabel()
 
         scrollView.addSubview(searchBar)
-        searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32).isActive = true
-        searchBar.topAnchor.constraint(equalTo: placeLabel.bottomAnchor, constant: 16).isActive = true
-        searchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32).isActive = true
-        searchBar.heightAnchor.constraint(equalToConstant: 100).isActive = true
+
     }
 
     private func setupUI() {
@@ -71,12 +100,21 @@ class HomeVC: UIViewController {
         scrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
 
-        scrollView.addSubview(deliveryLabel)
-        deliveryLabel.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 10).isActive = true
-        deliveryLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 10).isActive = true
 
-        scrollView.addSubview(placeLabel)
-        placeLabel.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 10).isActive = true
+        scrollView.addSubview(stackView)
+        stackView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 16).isActive = true
+        stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
+        stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -8).isActive = true
+        stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+
+
+        stackView.addSubview(deliveryLabel)
+        deliveryLabel.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 10).isActive = true
+        deliveryLabel.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 10).isActive = true
+
+        stackView.addSubview(placeLabel)
+        placeLabel.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 10).isActive = true
         placeLabel.topAnchor.constraint(equalTo: deliveryLabel.bottomAnchor, constant: 2).isActive = true
 
         scrollView.addSubview(searchBar)
@@ -86,7 +124,19 @@ class HomeVC: UIViewController {
         searchBar.heightAnchor.constraint(equalToConstant: 100).isActive = true
     }
 
-    private func setupCollectionView() {
+    private func setupLabel() {
+
+        stackView.addSubview(popularRestaurantLabel)
+        popularRestaurantLabel.topAnchor.constraint(equalTo: worldCuisineCollectionView.bottomAnchor, constant: 10).isActive = true
+        popularRestaurantLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8).isActive = true
+
+        stackView.addSubview(viewAllLabel)
+        viewAllLabel.topAnchor.constraint(equalTo: worldCuisineCollectionView.bottomAnchor, constant: 10).isActive = true
+        viewAllLabel.leadingAnchor.constraint(equalTo: popularRestaurantLabel.trailingAnchor, constant: 56).isActive = true
+
+    }
+
+    private func setupWorldCuisineCollectionView() {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 100, height: 140)
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
