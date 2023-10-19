@@ -17,6 +17,8 @@
 		1E3C97512AE150E30085A5CB /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3C97502AE150E30085A5CB /* ProfileVC.swift */; };
 		1E3C97532AE150F40085A5CB /* MoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3C97522AE150F40085A5CB /* MoreVC.swift */; };
 		1E3C97572AE151B70085A5CB /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3C97562AE151B70085A5CB /* HomeVC.swift */; };
+		1E8C07502AE1735400DAA61D /* WorldCuisineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8C074F2AE1735400DAA61D /* WorldCuisineCollectionViewCell.swift */; };
+		1E8C07552AE176BB00DAA61D /* WorldCuisineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8C07542AE176BB00DAA61D /* WorldCuisineModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		1E3C97502AE150E30085A5CB /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		1E3C97522AE150F40085A5CB /* MoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreVC.swift; sourceTree = "<group>"; };
 		1E3C97562AE151B70085A5CB /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		1E8C074F2AE1735400DAA61D /* WorldCuisineCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldCuisineCollectionViewCell.swift; sourceTree = "<group>"; };
+		1E8C07542AE176BB00DAA61D /* WorldCuisineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldCuisineModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,9 @@
 		1E3C97362AE14D0D0085A5CB /* ProgrammaticUI */ = {
 			isa = PBXGroup;
 			children = (
+				1E8C07512AE1769900DAA61D /* Model */,
+				1E8C074E2AE16E6100DAA61D /* Cell */,
+				1E3C97592AE164EA0085A5CB /* Extension */,
 				1E3C97582AE15ABC0085A5CB /* App */,
 				1E3C97542AE151900085A5CB /* TabBarController */,
 				1E3C974B2AE14F780085A5CB /* Controller */,
@@ -101,6 +108,29 @@
 				1E3C97372AE14D0D0085A5CB /* AppDelegate.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		1E3C97592AE164EA0085A5CB /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		1E8C074E2AE16E6100DAA61D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				1E8C074F2AE1735400DAA61D /* WorldCuisineCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		1E8C07512AE1769900DAA61D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1E8C07542AE176BB00DAA61D /* WorldCuisineModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +207,8 @@
 				1E3C97572AE151B70085A5CB /* HomeVC.swift in Sources */,
 				1E3C973C2AE14D0D0085A5CB /* MenuVC.swift in Sources */,
 				1E3C97382AE14D0D0085A5CB /* AppDelegate.swift in Sources */,
+				1E8C07552AE176BB00DAA61D /* WorldCuisineModel.swift in Sources */,
+				1E8C07502AE1735400DAA61D /* WorldCuisineCollectionViewCell.swift in Sources */,
 				1E3C97532AE150F40085A5CB /* MoreVC.swift in Sources */,
 				1E3C974D2AE14FD50085A5CB /* MainTabController.swift in Sources */,
 				1E3C974F2AE150D90085A5CB /* OffersVC.swift in Sources */,
