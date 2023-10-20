@@ -115,10 +115,7 @@ class HomeVC: UIViewController {
         label.textAlignment = .right
         return label
     }()
-    
-    
-
-    
+   
     var worldCuisineCollectionView: UICollectionView!
     var popularRestaurantTableView: UITableView!
     var mostPopularCollectionView: UICollectionView!
@@ -130,8 +127,10 @@ class HomeVC: UIViewController {
         setupUI()
         setupWorldCuisineCollectionView()
         setupLabel()
-//      setupPopularRestaurantTableView()
-//      setupMostPopularLabel()
+//        setupPopularRestaurantTableView()
+//        setupMostPopularLabel()
+//        setupRecentItemsLabel()
+//        setupRecentItemTableView()
 
     }
 
@@ -275,6 +274,20 @@ class HomeVC: UIViewController {
     
     private func setupRecentItemTableView(){
         
+        
+        recentItemsTableView = UITableView()
+        recentItemsTableView.translatesAutoresizingMaskIntoConstraints = false
+        recentItemsTableView.backgroundColor = .clear
+        recentItemsTableView.delegate = self
+        recentItemsTableView.dataSource = self
+        recentItemsTableView.register(RecentItemTableViewCell.self, forCellReuseIdentifier: "cell")
+
+        stackView.addSubview(recentItemsTableView)
+        
+        recentItemsTableView.topAnchor.constraint(equalTo: recentItemsLabel.bottomAnchor, constant: 10).isActive = true
+        recentItemsTableView.leadingAnchor.constraint(equalTo: stackView.leadingAnchor).isActive = true
+        recentItemsTableView.trailingAnchor.constraint(equalTo: stackView.trailingAnchor).isActive = true
+        recentItemsTableView.heightAnchor.constraint(equalToConstant: 800).isActive = true
     }
     
 }

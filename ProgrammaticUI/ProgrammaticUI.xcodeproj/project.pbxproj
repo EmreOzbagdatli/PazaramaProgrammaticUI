@@ -203,8 +203,8 @@
 		1E8C07592AE1B0BA00DAA61D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1E8C074E2AE16E6100DAA61D /* Cell */,
 				1E3C97562AE151B70085A5CB /* HomeVC.swift */,
+				1E8C074E2AE16E6100DAA61D /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
