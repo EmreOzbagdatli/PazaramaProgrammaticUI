@@ -16,8 +16,7 @@ class MainTabController: UITabBarController,UITabBarControllerDelegate {
         view.backgroundColor = .orange
         
         configureViewControllers()
-        
-        
+
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "cart.fill"), style: .done, target: self, action: #selector(didTapButton))
         self.navigationItem.rightBarButtonItem?.tintColor = .black
         
@@ -49,6 +48,7 @@ class MainTabController: UITabBarController,UITabBarControllerDelegate {
         
         setViewControllers([menu,offer,home,profile,more], animated: true)
         self.selectedIndex = 2
+        
     }
 
  
