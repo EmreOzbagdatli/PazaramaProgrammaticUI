@@ -38,6 +38,7 @@ class MainTabController: UITabBarController,UITabBarControllerDelegate {
         offer.title = "Offers"
         let home = HomeVC()
         home.tabBarItem.image = UIImage(systemName: "house.fill")
+        home.title = "Home"
         
         let profile = ProfileVC()
         profile.tabBarItem.image = UIImage(systemName: "person.fill")

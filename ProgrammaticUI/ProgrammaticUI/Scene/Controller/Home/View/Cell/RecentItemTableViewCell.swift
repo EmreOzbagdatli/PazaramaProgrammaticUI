@@ -8,71 +8,91 @@
 import UIKit
 
 class RecentItemTableViewCell: UITableViewCell {
-
-    let restaurantImage : UIImageView = {
+    
+    var cellLabel: UILabel = {
+        let lbl = UILabel()
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        return lbl
+    }()
+    
+    var restaurantType : UILabel = {
+        let lbl = UILabel()
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        return lbl
+    }()
+    
+    var cuisine : UILabel = {
+        let lbl = UILabel()
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        return lbl
+    }()
+    
+    var ranking : UILabel = {
+        let lbl = UILabel()
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        return lbl
+    }()
+    
+    var cellImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFill
-        imageView.layer.cornerRadius = 8
         imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 10.0
         return imageView
     }()
     
-    let restaurantTitleLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .black
-        label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 12)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    let ratingPointLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .black
-        label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 12)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    let restaurantTypeLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .black
-        label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 12)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
+    var starImage: UIImageView = {
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        return image
     }()
     
     
-
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        backgroundColor = .clear
         
-        addSubview(restaurantImage)
-        restaurantImage.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-        restaurantImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
-        restaurantImage.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        restaurantImage.heightAnchor.constraint(equalToConstant: 190).isActive = true
-        restaurantImage.widthAnchor.constraint(equalToConstant: contentView.frame.size.width).isActive = true
+        contentView.addSubview(starImage)
+        contentView.addSubview(cellLabel)
+        contentView.addSubview(cuisine)
+        contentView.addSubview(cellImageView)
+        contentView.addSubview(cuisine)
+        contentView.addSubview(restaurantType)
+        contentView.addSubview(ranking)
         
-        addSubview(restaurantTitleLabel)
-        restaurantTitleLabel.topAnchor.constraint(equalTo: restaurantImage.bottomAnchor, constant: 10).isActive = true
-        restaurantTitleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 10).isActive = true
-        
-        addSubview(ratingPointLabel)
-        ratingPointLabel.topAnchor.constraint(equalTo: restaurantTitleLabel.bottomAnchor,constant: 10).isActive = true
-        ratingPointLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
-        
-        addSubview(restaurantTypeLabel)
-        restaurantTypeLabel.topAnchor.constraint(equalTo: restaurantTitleLabel.bottomAnchor, constant: 10).isActive = true
-        restaurantTypeLabel.leadingAnchor.constraint(equalTo: ratingPointLabel.trailingAnchor).isActive = true
+        setupConstraints()
     }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
+    
+    func setupConstraints() {
+        
+        cellImageView.topAnchor.constraint(equalTo: topAnchor,constant: 10).isActive = true
+        cellImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 21).isActive = true
+        cellImageView.widthAnchor.constraint(equalToConstant: 75).isActive = true
+        cellImageView.heightAnchor.constraint(equalToConstant: 75).isActive = true
+        
+        cellLabel.topAnchor.constraint(equalTo: topAnchor,constant: 10).isActive = true
+        cellLabel.leadingAnchor.constraint(equalTo: cellImageView.trailingAnchor, constant: 22).isActive = true
+        
+        cuisine.topAnchor.constraint(equalTo: cellLabel.bottomAnchor,constant: 3).isActive = true
+        cuisine.leadingAnchor.constraint(equalTo: restaurantType.trailingAnchor, constant: 9).isActive = true
+        
+        restaurantType.topAnchor.constraint(equalTo: cellLabel.bottomAnchor,constant: 3).isActive = true
+        restaurantType.leadingAnchor.constraint(equalTo: cellImageView.trailingAnchor, constant: 22).isActive = true
+        
+        starImage.leadingAnchor.constraint(equalTo: cellImageView.trailingAnchor, constant: 22).isActive = true
+        starImage.widthAnchor.constraint(equalToConstant: 14).isActive = true
+        starImage.heightAnchor.constraint(equalToConstant: 14).isActive = true
+        starImage.topAnchor.constraint(equalTo: restaurantType.bottomAnchor, constant: 5).isActive = true
+        
+        ranking.leadingAnchor.constraint(equalTo: starImage.trailingAnchor, constant: 6).isActive = true
+        ranking.topAnchor.constraint(equalTo: restaurantType.bottomAnchor, constant: 5).isActive = true
+        
+    }
+         
 }
+
+

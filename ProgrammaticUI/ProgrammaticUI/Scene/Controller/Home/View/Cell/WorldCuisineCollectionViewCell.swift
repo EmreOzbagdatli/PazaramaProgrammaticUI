@@ -9,56 +9,40 @@ import UIKit
 
 class WorldCuisineCollectionViewCell: UICollectionViewCell {
     
-    static let identifier = "worldCuisineCollectionViewCell"
+    var imageView = UIImageView()
     
-    let worldCuisineImageView : UIImageView = {
-        let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFill
-        imageView.layer.cornerRadius = 8
-        imageView.backgroundColor = UIColor(named: "PlaceholderFont")
-        imageView.clipsToBounds = true
-        return imageView
+        let label: UILabel = {
+        let lbl = UILabel()
+        lbl.font = UIFont(name: "Metropolis", size: 10)
+        lbl.font = UIFont.boldSystemFont(ofSize: 14)
+        lbl.textAlignment = .center
+        return lbl
     }()
-    
-    let cuisineCountryLabel : UILabel = {
-        let label = UILabel()
-        label.textColor = .black
-        label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 12)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    private func addViews() {
-        backgroundColor = .clear
-        
-        addSubview(worldCuisineImageView)
-        worldCuisineImageView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        worldCuisineImageView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
-        worldCuisineImageView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
-        worldCuisineImageView.heightAnchor.constraint(equalTo: worldCuisineImageView.widthAnchor, multiplier: 1).isActive = true
-        
-        addSubview(cuisineCountryLabel)
-        cuisineCountryLabel.topAnchor.constraint(equalTo: worldCuisineImageView.bottomAnchor,constant: 4).isActive = true
-        cuisineCountryLabel.leftAnchor.constraint(equalTo: worldCuisineImageView.leftAnchor).isActive = true
-        cuisineCountryLabel.rightAnchor.constraint(equalTo: worldCuisineImageView.rightAnchor).isActive = true
-        cuisineCountryLabel.heightAnchor.constraint(equalToConstant: 22).isActive = true
-        
-        
-    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addViews()
+        addSubview(imageView)
+        addSubview(label)
+        
+        imageView.frame = bounds
+        imageView.frame = CGRect(x: 0, y: 0, width: 88, height: 88)
+        
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 10.0
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 10).isActive = true
+        imageView.trailingAnchor.constraint(equalTo: trailingAnchor,constant: 10).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        imageView.widthAnchor.constraint(equalToConstant: 115).isActive = true
+
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10).isActive = true
+        label.centerXAnchor.constraint(equalTo: imageView.centerXAnchor).isActive = true
+        
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }
-
-    
-    
-

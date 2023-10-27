@@ -8,71 +8,87 @@
 import UIKit
 
 class PopularRestaurantsTableViewCell: UITableViewCell {
-
-    let restaurantImage : UIImageView = {
+ 
+    var cellLabel: UILabel = {
+        let lbl = UILabel()
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        return lbl
+    }()
+    
+    
+    var cellLabelSecond: UILabel = {
+        let lbl = UILabel()
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        return lbl
+    }()
+    
+    
+    var rankingLabel: UILabel = {
+        let lbl = UILabel()
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        return lbl
+    }()
+    
+    
+    var cellImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFill
-        imageView.layer.cornerRadius = 8
-        imageView.clipsToBounds = true
         return imageView
     }()
     
-    let restaurantTitleLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .black
-        label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 12)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    let ratingPointLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .black
-        label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 12)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    let restaurantTypeLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .black
-        label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 12)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
+    var starImage: UIImageView = {
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        return image
     }()
     
     
-
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        backgroundColor = .clear
         
-        addSubview(restaurantImage)
-        restaurantImage.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-        restaurantImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
-        restaurantImage.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        restaurantImage.heightAnchor.constraint(equalToConstant: 190).isActive = true
-        restaurantImage.widthAnchor.constraint(equalToConstant: contentView.frame.size.width).isActive = true
-        
-        addSubview(restaurantTitleLabel)
-        restaurantTitleLabel.topAnchor.constraint(equalTo: restaurantImage.bottomAnchor, constant: 10).isActive = true
-        restaurantTitleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 10).isActive = true
-        
-        addSubview(ratingPointLabel)
-        ratingPointLabel.topAnchor.constraint(equalTo: restaurantTitleLabel.bottomAnchor,constant: 10).isActive = true
-        ratingPointLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
-        
-        addSubview(restaurantTypeLabel)
-        restaurantTypeLabel.topAnchor.constraint(equalTo: restaurantTitleLabel.bottomAnchor, constant: 10).isActive = true
-        restaurantTypeLabel.leadingAnchor.constraint(equalTo: ratingPointLabel.trailingAnchor).isActive = true
+        contentView.addSubview(starImage)
+        contentView.addSubview(cellLabel)
+        contentView.addSubview(cellLabelSecond)
+        contentView.addSubview(cellImageView)
+        contentView.addSubview(rankingLabel)
+       
+        setupConstraints()
     }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
+    
+    func setupConstraints() {
+       
+        cellImageView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        cellImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
+        cellImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+        cellImageView.widthAnchor.constraint(equalToConstant: 375).isActive = true
+        cellImageView.heightAnchor.constraint(equalToConstant: 193).isActive = true
+        cellImageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+         
+        cellLabel.topAnchor.constraint(equalTo: cellImageView.bottomAnchor, constant: 10).isActive = true
+        cellLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 21).isActive = true
+        cellLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -31).isActive = true
+        
+        cellLabelSecond.topAnchor.constraint(equalTo: cellImageView.bottomAnchor, constant: 35).isActive = true
+        cellLabelSecond.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 58).isActive = true
+        cellLabelSecond.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -31).isActive = true
+        
+        starImage.topAnchor.constraint(equalTo: cellImageView.bottomAnchor,constant: 35).isActive = true
+        starImage.trailingAnchor.constraint(equalTo: cellLabelSecond.leadingAnchor, constant: -25).isActive = true
+        starImage.widthAnchor.constraint(equalToConstant: 14).isActive = true
+        starImage.heightAnchor.constraint(equalToConstant: 14).isActive = true
+        
+        rankingLabel.topAnchor.constraint(equalTo: cellImageView.bottomAnchor, constant: 32).isActive = true
+        rankingLabel.trailingAnchor.constraint(equalTo: cellLabelSecond.leadingAnchor, constant: -3).isActive = true
+        rankingLabel.widthAnchor.constraint(equalToConstant: 20).isActive = true
+        rankingLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        
+    }
+    
 }
+
+
